@@ -64,3 +64,11 @@ button {
     outline: none;
     border: none;
 }
+
+span {
+    font-size: 30px;
+    font-family: "Yrsa", serif;
+    color: #22212C;
+    font-weight: 800;
+
+}

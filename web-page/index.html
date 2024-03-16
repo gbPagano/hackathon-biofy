@@ -18,13 +18,15 @@
 
         <div class="form_wrap">
             <h1>Envie uma imagem:</h1>
-            <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+            <form id="uploadForm" action="" method="post" enctype="multipart/form-data">
                 <label for="imageInput">Selecionar uma imagem</label>
-                <input type="file" name="image" id="imageInput" value="" accept="image/*">
-                <span id='file-name'>jkh</span>
+                <input type="file" name="image" id="imageInput" value="" accept=".jpg, .jpeg, .png"/>
+                <span id='file-name'></span>
                 <button type="submit">Enviar</button>
             </form>
             <div id="preview"></div>
+            <div id="resultado"></div>
         </div>
     </body>
+    <script type="text/javascript" src="javascript.js"></script>
 </html>
