@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    color: #F8F8F2;
+}
+
+.title {
+    background-color: #22212C;
+    height: 100vh;
+    padding: 50px;
+    text-align: left;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.title h1 {
+    font-size: 100px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 800;
+}
+
+.title content {
+    font-size: 50px;
+    font-family: "Yrsa", serif;
+}
+
+.form_wrap {
+    background-color: #F8F8F2;
+    padding: 50px;
+    text-align: left;
+    display: flex;
+}
+
+.form_wrap h1 {
+    font-size: 50px;
+    font-family: "JetBrains Mono", monospace;
+    color: #22212C;
+    font-weight: 800;
+    margin-right: auto;
+}
+
+.form_wrap form{
+    color: #22212C;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+button, label {
+    font-size: 40px;
+    font-family: "Yrsa", serif;
+    background-color: #22212C;
+    border-radius: 5px;
+    color: #F8F8F2;
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+    margin: 10px;
+}
+
+input[type='file'], button {
+    display: none
+}
+
+button {
+    outline: none;
+    border: none;
+}
