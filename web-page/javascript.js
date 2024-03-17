@@ -4,6 +4,8 @@ const form = document.querySelector("#uploadForm");
 const result = document.querySelector("#resultado");
 const input = document.querySelector('#imageInput');
 const preview = document.querySelector("#preview")
+const bacteria = document.querySelectorAll('path');
+const title = document.querySelector(".title");
 
 input.addEventListener("change", function() {
     preview.innerHTML = "";
@@ -24,11 +26,21 @@ input.addEventListener("change", function() {
         imagem.style.maxWidth = '600px';
 
         preview.appendChild(imagem);
+        window.scrollTo({
+            top: document.documentElement.scrollHeight || document.body.scrollHeight,
+            behavior: 'smooth'
+        });
     }
 })
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
+
+    title.style.backgroundImage = `url(${URL.createObjectURL(form.files[0])})`;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 
     let formData = new FormData(this);
 
@@ -45,3 +57,13 @@ form.addEventListener("submit", function(event) {
         result.innerHTML = "Ocorreu um erro ao processar a solicitação.";
     });
 })
+
+addEventListener('mousemove', function(event) {
+
+    bacteria.forEach(bacterium => {
+        const x = event.clientX / 200;
+        const y = event.clientY / 200;
+
+        bacterium.style.transform = `translate(${x}px, ${y}px)`;
+    });  
+});

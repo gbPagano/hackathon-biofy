@@ -3,6 +3,18 @@ body {
     color: #F8F8F2;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #22212C; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #454158;
+}
+
 .title {
     background-color: #22212C;
     min-height: 90vh;
@@ -22,11 +34,11 @@ body {
 }
 
 .title p {
-    font-size: 46px;
+    font-size: 38px;
     font-family: "Yrsa", serif;
     text-indent: 70px;
     text-align: justify;
-    margin-right: 50px;
+    margin-right: 550px;
 }
 
 .form_wrap {
@@ -85,3 +97,9 @@ img {
     margin-left: auto;
 }
 
+svg {
+    position: absolute;
+    right: 20px;
+    top: 150px;
+    width: 500px;
+}
