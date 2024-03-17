@@ -10,7 +10,7 @@ from src.api.schemas import SingleResult
 from src.api.utils import get_labels, get_model, preprocess_image
 
 
-app = FastAPI()
+app = FastAPI(title="Pathogenic Finder - Poggers Team")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
