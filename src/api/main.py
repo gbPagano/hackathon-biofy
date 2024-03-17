@@ -2,6 +2,7 @@ from io import BytesIO
 
 import torch
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from PIL import Image
 
@@ -10,6 +11,13 @@ from src.api.utils import get_labels, get_model, preprocess_image
 
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
