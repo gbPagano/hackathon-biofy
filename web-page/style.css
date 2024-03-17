@@ -15,6 +15,40 @@ body::-webkit-scrollbar-thumb {
   background-color: #454158;
 }
 
+nav {
+    font-family: "Jetbrains Mono";
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 40px;
+    font-size: 14px;
+    position: fixed;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #282a3600;
+    backdrop-filter: blur(10px);
+}
+
+nav p {
+    margin-right: auto;
+}
+
+nav button {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: .1s ease-in;
+    margin-right: 30px;
+}
+nav button:hover {
+    transform: scale(1.2);
+}
+
 .title {
     background-color: #22212C;
     min-height: 90vh;
@@ -30,7 +64,11 @@ body::-webkit-scrollbar-thumb {
     font-weight: 800;
     margin-top: 0px;
     text-indent: 70px;
-    
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 500px;
+    z-index: 10;
 }
 
 .title p {
@@ -41,11 +79,21 @@ body::-webkit-scrollbar-thumb {
     margin-right: 550px;
 }
 
+.title svg {
+    z-index: 0;
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    width: 500px;
+}
+
 .form_wrap {
     background-color: #F8F8F2;
-    padding: 50px;
+    padding: 50px 50px 50px 50px;
     text-align: left;
     display: flex;
+    height: 400px;
+    position: relative;
 }
 
 .form_wrap h1 {
@@ -65,7 +113,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 
-button, label {
+.form_wrap button, label {
     font-size: 40px;
     font-family: "Oswald";
     background-color: #22212C;
@@ -76,11 +124,11 @@ button, label {
     margin: 10px 10px 10px 0px
 }
 
-input[type='file'], button {
+input[type='file'], .form_wrap button {
     display: none
 }
 
-button {
+.form_wrap button {
     outline: none;
     border: none;
 }
@@ -97,9 +145,19 @@ img {
     margin-left: auto;
 }
 
-svg {
+#resultado {
+    font-size: 30px;
+    font-family: "Oswald";
+    color: #22212C;
+    font-weight: 800;
+    margin-right: auto;
     position: absolute;
-    right: 20px;
-    top: 150px;
-    width: 500px;
+    right: 50px;
+    bottom: 0px;
+    font-style: italic;
+}
+
+.form_wrap button {
+    display: block;
+    opacity: 0;
 }

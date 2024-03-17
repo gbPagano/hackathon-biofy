@@ -1,11 +1,12 @@
 const label = document.querySelector("label");
-const button = document.querySelector("button");
+const submit = document.querySelector("#submit");
 const form = document.querySelector("#uploadForm");
 const result = document.querySelector("#resultado");
 const input = document.querySelector('#imageInput');
 const preview = document.querySelector("#preview")
 const bacteria = document.querySelectorAll('path');
 const title = document.querySelector(".title");
+const wrap = document.querySelector(".form_wrap")
 
 input.addEventListener("change", function() {
     preview.innerHTML = "";
@@ -13,44 +14,50 @@ input.addEventListener("change", function() {
     if (this.value == "") {
         label.textContent = "Nenhuma imagem selecionada";
         label.style.backgroundColor = "red";
-        button.style.display = "none";
+        submit.style.display = "none";
+        result.innerHTML = "";
     }
     else {
         let string = this.value.split("\\");
         label.textContent = string[string.length-1];
-        button.style.display = "block";
+        submit.style.display = "block";
         label.style.backgroundColor = "green";
 
         let imagem = document.createElement('img');
         imagem.src = URL.createObjectURL(this.files[0]);
-        imagem.style.maxWidth = '600px';
+        imagem.style.maxHeight = '400px';
 
         preview.appendChild(imagem);
         window.scrollTo({
             top: document.documentElement.scrollHeight || document.body.scrollHeight,
             behavior: 'smooth'
         });
+        submit.click();
     }
 })
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", async(event) => {
     event.preventDefault();
 
-    title.style.backgroundImage = `url(${URL.createObjectURL(form.files[0])})`;
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    // title.style.backgroundImage = `url(${URL.createObjectURL(form.files[0])})`;
+    // window.scrollTo({
+    //     top: 0,
+    //     behavior: 'smooth'
+    // });
 
-    let formData = new FormData(this);
+    let formData = new FormData(form);
+    console.log(event)
 
-    fetch("example.com/uploadimage", {
+    fetch("https://hackathon-biofy.fly.dev/predict", {
         method: "POST",
-        body: formData
+        body: formData,
+        headers: {
+            'accept': 'application/json',
+        } 
     })
     .then(response => response.json())
     .then(data => {
-        result.innerHTML = "Nome Bactéria: " + data.nomeBacteria;
+        result.innerHTML = (data.result);
     })
     .catch(error => {
         console.error("Ocorreu um erro", error);
