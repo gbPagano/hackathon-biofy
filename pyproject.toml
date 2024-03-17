@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "hackathon-biofy"
+version = "0.1.0"
+description = ""
+authors = ["gbPagano <guilhermebpagano@gmail.com>"]
+readme = "README.md"
+packages = [{include="src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "^10.2.0"
+torch = "^2.2.1"
+numpy = "^1.26.4"
+torchvision = "^0.17.1"
+rich = "^13.7.1"
+pandas = "^2.2.1"
+matplotlib = "^3.8.3"
+scikit-learn = "^1.4.1.post1"
+opencv-python = "^4.9.0.80"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
