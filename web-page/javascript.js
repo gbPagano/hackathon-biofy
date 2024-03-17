@@ -3,12 +3,28 @@ const button = document.querySelector("button");
 const form = document.querySelector("#uploadForm");
 const result = document.querySelector("#resultado");
 const input = document.querySelector('#imageInput');
-const fileName = document.querySelector('#file-name');
+const preview = document.querySelector("#preview")
 
 input.addEventListener("change", function() {
-    let string = this.value.split("\\");
-    fileName.textContent = string[string.length-1];
-    button.style.display = "block";
+    preview.innerHTML = "";
+
+    if (this.value == "") {
+        label.textContent = "Nenhuma imagem selecionada";
+        label.style.backgroundColor = "red";
+        button.style.display = "none";
+    }
+    else {
+        let string = this.value.split("\\");
+        label.textContent = string[string.length-1];
+        button.style.display = "block";
+        label.style.backgroundColor = "green";
+
+        let imagem = document.createElement('img');
+        imagem.src = URL.createObjectURL(this.files[0]);
+        imagem.style.maxWidth = '600px';
+
+        preview.appendChild(imagem);
+    }
 })
 
 form.addEventListener("submit", function(event) {
@@ -27,6 +43,5 @@ form.addEventListener("submit", function(event) {
     .catch(error => {
         console.error("Ocorreu um erro", error);
         result.innerHTML = "Ocorreu um erro ao processar a solicitação.";
-
     });
 })

@@ -6,27 +6,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Oswald:wght@200..700&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
         <title>Upload de Imagem</title>
     </head>
     <body>
         <div class="title">
-            <h1>Lorem Impsum</h1>
-            <content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</content>
+            <h1>Pathogenic Finder</h1>
+            <p>Desenvolvida por quatro jovens do Triângulo Mineiro, o Pathogenic Finder representa um avanço significativo na intersecção entre bioinformática e inteligência artificial. Utilizando conceitos de visão computacional e outras áreas da IA, esta ferramenta revolucionária permite que qualquer indivíduo obtenha informações precisas sobre a família de uma bactéria através do simples input de imagens. Além disso, possui tanto uma versão disponível para navegador, como também um chatbot interativo no Whatsapp.</p>
+            <p>
+            O potencial do Pathogenic Finder vai além da identificação de bactérias, abrindo portas para a detecção de outros patógenos, como vírus. Embora atualmente focado em bactérias, o sistema está em constante aprimoramento para incorporar capacidades de identificação de diferentes tipos de micro-organismos, ampliando assim sua utilidade e aplicabilidade.</p>
         </div>
 
         <div class="form_wrap">
-            <h1>Envie uma imagem:</h1>
-            <form id="uploadForm" action="" method="post" enctype="multipart/form-data">
-                <label for="imageInput">Selecionar uma imagem</label>
-                <input type="file" name="image" id="imageInput" value="" accept=".jpg, .jpeg, .png"/>
-                <span id='file-name'></span>
-                <button type="submit">Enviar</button>
-            </form>
+            <div id="headwrap">
+                <h1>Envie uma imagem:</h1>
+                <form id="uploadForm" action="" method="post" enctype="multipart/form-data">
+                    <label for="imageInput">Procurar</label>
+                    <input type="file" name="image" id="imageInput" value="" accept=".jpg, .jpeg, .png"/>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
             <div id="preview"></div>
-            <div id="resultado"></div>
         </div>
+        <div id="resultado"></div>
     </body>
     <script type="text/javascript" src="javascript.js"></script>
 </html>

@@ -5,7 +5,7 @@ body {
 
 .title {
     background-color: #22212C;
-    height: 100vh;
+    min-height: 90vh;
     padding: 50px;
     text-align: left;
     font-optical-sizing: auto;
@@ -16,11 +16,17 @@ body {
     font-size: 100px;
     font-family: "JetBrains Mono", monospace;
     font-weight: 800;
+    margin-top: 0px;
+    text-indent: 70px;
+    
 }
 
-.title content {
-    font-size: 50px;
+.title p {
+    font-size: 46px;
     font-family: "Yrsa", serif;
+    text-indent: 70px;
+    text-align: justify;
+    margin-right: 50px;
 }
 
 .form_wrap {
@@ -32,7 +38,7 @@ body {
 
 .form_wrap h1 {
     font-size: 50px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Oswald";
     color: #22212C;
     font-weight: 800;
     margin-right: auto;
@@ -42,18 +48,20 @@ body {
     color: #22212C;
     margin-left: auto;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 button, label {
     font-size: 40px;
-    font-family: "Yrsa", serif;
+    font-family: "Oswald";
     background-color: #22212C;
     border-radius: 5px;
     color: #F8F8F2;
     cursor: pointer;
     padding: 0px 10px 0px 10px;
-    margin: 10px;
+    margin: 10px 10px 10px 0px
 }
 
 input[type='file'], button {
@@ -65,10 +73,15 @@ button {
     border: none;
 }
 
-span {
-    font-size: 30px;
-    font-family: "Yrsa", serif;
-    color: #22212C;
-    font-weight: 800;
-
+img {
+    border-radius: 10px;
 }
+
+#headwrap {
+    margin-right: auto;
+}
+
+#preview {
+    margin-left: auto;
+}
+
