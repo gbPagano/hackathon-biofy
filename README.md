@@ -1,7 +1,8 @@
 # Poggers Team - Pathogenic Finder
 
-Não tivemos tempo pra fazer um readme rsrs
+## 1° Hackathon Biofy 2024
 
+Desenvolvemos uma I.A que é capaz de receber uma foto/imagem de uma amostra de patógenos desconhecida e ser identificar qual o patógeno em questão.
 
 #### API
 
